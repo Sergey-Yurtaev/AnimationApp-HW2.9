@@ -18,7 +18,6 @@ class AnimationViewController: UIViewController {
     var animation = Animation.getAnimationInfo()
     
     // MARK: - IB Actions
-
     @IBAction func animationButton() {
         descriptionAnimationLabel.text = animation.descriptionAnimation
         
@@ -31,5 +30,9 @@ class AnimationViewController: UIViewController {
         
         animation = Animation.getAnimationInfo()
         buttonLabel.setTitle("Run \(animation.animationName)", for: .normal)
+    }
+    
+    deinit {
+        print("AnimationViewController has been dealocated")
     }
 }
